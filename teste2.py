@@ -10,6 +10,17 @@ Se algum arquivo ultrapassar o limite de 3MB retornar False, se todos os arquivo
 '''
 
 # '---------------------------------------------------DESENVOLVIMENTO - TESTE 2---------------------------------------------------'
+import os
 
-
+def lista_de_arquivos(diretorio):
+    for arquivo in os.listdir(diretorio):
+        caminho_arquivo = os.path.join(diretorio, arquivo)
+        tamanho = os.path.getsize(caminho_arquivo) / (1024 * 1024)
+        if tamanho > 3:
+            return False
+    return True
+print("Diretorio com arquivo menores que 3MB:")
+print(lista_de_arquivos("diretorio_t2/diretoria_true"))
+print("Diretorio com arquivo maiores que 3MB:")
+print(lista_de_arquivos("diretorio_t2/diretorio_false"))
 # '---------------------------------------------------DESENVOLVIMENTO - TESTE 2---------------------------------------------------'

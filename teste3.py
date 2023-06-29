@@ -3,25 +3,33 @@
 # - Desenvolver o código entre os trechos de comentário # DESENVOLVIMENTO - TESTE #
 # - É recomendado realizar a verificação/teste/execução do código várias vezes, para garantir o funcionamento
 # '------------------------------------------------------------------------------------------------------'
+# Exemplo da lista aleatória gerada e atribuída a variável lista_aleatoria
+# lista_aleatoria = ['v', 'U', 'S', 'a', 'A', 'X', 'v', 'q', 'M', 'f', 'y', 'r', 'N', 'u', 'G', 'b', 'u', 'w', 'i', 'w', 's', 'V', 'l', 'Z', 'n', 'c', 'H', 'm', 'o', 'n', 'm', 'A', 'c', 'c', 'y', 'j', 'o', 'x', 'h', 'r', 'V', 'h', 'l', 'w', 'C', 'V', 'h', 'q', 'u', 'W', 'd', 'p', 'V', 't', 'w', 'd', 'I', 'R', 'R', 58, 'h', 'Q', 'm', 'S', 'J', 'g', 'X', 'P', 'e', 'S', 'H', 'D', 'h', 'U', 'v', 'R', 'W', 'L', 'j', 'Q', 'P', 'k', 'k', 'l', 'I', 'T', 'y', 'U', 'G', 'L', 'U', 'I', 'N', 'e', 'b', 'l', 'k', 'G', 'k', 'b', 'l']
+# '------------------------------------------------------------------------------------------------------'
 
-teste = ''' TESTE 3 - GESTÃO DE LOGS (MÉDIO)
-TESTE: Criar uma classe LogTxt com método log;
-O método log deve receber um valor inteiro de equivalência de sucesso e uma mensagem, anotando em um arquivo .txt, com data e hora da execução
+teste = ''' TESTE 5 - ESTRUTURA LÓGICA (DIFÍCIL)
+Esse teste simula uma situação problema, que deve ser executada obrigatoriamente, mesmo em um cenário de erros múltiplos;
+Ex.: preciso gerar um PDF usando uma API de terceiro, todavia a mesma está com instabilidade (e portanto retornando erro em algumas tentativas de gerar pdfs), 
+preciso que meu código execute até conseguir gerar o PDF (nesse caso, preciso que o código execute até conseguir printar o código abaixo);
 
-Ex. de estrutura a ser anotada no log.txt
-23/01/2023 09:16:15 > Sucesso > Mensagem recebida como parâmetro do método'''
+TESTE: Montar uma estrutura lógica que garanta a execução do print contido no trecho de desenvolvimento, sem alterar o seu conteúdo
+Obs.: O print não pode ser mexido, apenas colocado dentro de estruturas lógicas tipo if/for/while/try/etc...'''
 
 # # CÓDIGO ESTÁTICO - NÃO ALTERAR #
-EQUIVALENCIA_SUCESSO = {
-    1: 'Sucesso',
-    0: 'Sem Sucesso',
-    -1: 'Erro'
-}
+import string
+import random
+caracteres = string.ascii_lowercase+string.ascii_uppercase
+lista_aleatoria = [random.choice(caracteres) for i in range(100)]
+lista_aleatoria.insert(random.randint(0, 99), random.randint(0, 100))
 # # CÓDIGO ESTÁTICO - NÃO ALTERAR #
 
-# '---------------------------------------------------DESENVOLVIMENTO - TESTE 1---------------------------------------------------'
+# '---------------------------------------------------DESENVOLVIMENTO - TESTE 3---------------------------------------------------'
+var = True
 
-
-# '---------------------------------------------------DESENVOLVIMENTO - TESTE 1---------------------------------------------------'
-# EXEMPLO DE MENSAGEM A SER PRINTADA/ANOTADA NO TXT:
-# 2022-12-10 14:05:00 > Sucesso > Mensagem recebida pelo método log
+while var:
+    try:
+        print(int(lista_aleatoria[random.randint(0, len(lista_aleatoria)-1)])) # NÃO ALTERAR O CÓDIGO, APENAS O SEU LOCAL!!! PRINTA UM ELEMENTO ALEATÓRIO DA LISTA CONVERTIDO PARA O TIPO INT()
+        var = False
+    except:
+        print("Erro aguarde mais um pouco...")
+# '---------------------------------------------------DESENVOLVIMENTO - TESTE 3---------------------------------------------------'
